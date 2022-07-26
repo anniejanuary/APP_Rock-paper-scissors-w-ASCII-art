@@ -28,26 +28,21 @@ scissors = '''
 
 import random
 
+game_images = [rock, paper, scissors] # ASCII art as a list indexes to call on
+
 choice = int (input ("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors: \n"))
-if choice == 0:
-  print(rock)
-elif choice == 1:
-  print(paper)
-elif choice == 2:
-  print(scissors)
+if choice > 2 or choice < 0:
+    print("You've entered an incorrect number")
+else:
+  print(game_images[choice]) # print "game_image list" item no "choice"
 
-print("Computer chose: ")
 computer_random = random.randint (0,2)
-if computer_random == 0:
-  print(rock)
-elif computer_random == 1:
-  print(paper)
-elif computer_random == 2:
-  print(scissors)
+print(f"Computer chose: {computer_random}")
+print(game_images[computer_random])
 
-if (choice == 0 and computer_random == 0) or (choice == 1 and computer_random == 1) or (choice == 2 and computer_random == 2):
+if choice == computer_random:
   print("It's a draw")
 elif (choice == 0 and computer_random == 2) or (choice == 1 and computer_random == 0) or (choice == 2 and computer_random == 1):
-  print("You've won!")
+  print("You win!")
 else:
-  print("You've lost!")
+  print("You lose!")
