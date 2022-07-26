@@ -28,13 +28,15 @@ scissors = '''
 
 import random
 
+#   a list of ASCII art to call on 
 game_images = [rock, paper, scissors]
 
 choice = int (input ("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors: \n"))
 if choice > 2 or choice < 0:
     print("You've entered an incorrect number")
 else:
-  print(game_images[choice])
+  #     print ASCII art from "game_images list" according to its index corresponding to the "choice" value
+  print(game_images[choice]) 
 
   computer_random = random.randint (0,2)
   print(f"Computer chose: {computer_random}")
